@@ -10,7 +10,7 @@ This code is far from being finished, well documented or ready for release. It c
 
 ## Typical usage
 ```
-python3 lmp2cg --data lmp.data --template template.dat [--trajectory lmp.dump]
+python3 lmp2cg.py --data lmp.data --template template.dat [--trajectory lmp.dump]
 ```
 ## Python modules
 sys, os, datetime, numpy, NetworkX
