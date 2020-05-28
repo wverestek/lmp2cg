@@ -1,0 +1,6 @@
+# name	        type  mapping_type  mapping_data
+PA6head		3     id	    20:25 71:79 # for mapping to ethyl set type to 2, water to 3
+PA6tail         4     id 	    64:70 # for mapping to amide set type to 1, water to 3
+amide           1     id 	    26:32
+ethyl           2     id 	    33:38 1:6
+water      	5     id 	    159:161
