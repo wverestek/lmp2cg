@@ -204,6 +204,8 @@ class bead_template:
                 if line[2].casefold() == 'id':
                     # self.style.append('id')
                     style = 'id'
+                elif line[2].casefold() == 'mol':
+                    style = 'mol'    
                 elif line[2].casefold() == 'del_template':
                     style = 'del_template'    
                 elif line[2].casefold() == 'del_id':
@@ -493,6 +495,9 @@ def search_bead_templates(AA,BT):
             #    for str1,str2 in AA.nodes('bead_id'): f1.write(str(str1)+'\t'+str(str2)+'\n')
             #    for str1,str2 in AA.nodes('bead_type'): f2.write(str(str1)+'\t'+str(str2)+'\n')
         # delete some nodes if requested ------------------------------------------
+        elif (BT.style[i] == 'mol'):
+            atomIDs = [atomID for atomID,molID in dict(nx.get_node_attributes(AA,'mol')).items() if molID in BT.data[i]]
+            find_and_mark_subgraph_by_ID(AA,BT.name[i],BT.type[i],atomIDs)
         elif (BT.style[i] == 'del_template'):
             print()
             print('Deleting: \''+BT.name[i]+'\' with type',BT.type[i],'by',BT.style[i],len(BT.data[i]),'beads ... ')
